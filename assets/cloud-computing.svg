@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="600" height="350" rx="16" fill="#f0f9ff" />
+
+  <!-- Connecting Data Lines (Network) -->
+  <g stroke="#93c5fd" stroke-width="3" stroke-dasharray="6 4" fill="none">
+    <path d="M 300 140 L 120 260" />
+    <path d="M 300 140 L 300 260" />
+    <path d="M 300 140 L 480 260" />
+  </g>
+
+  <!-- Central Cloud Shape -->
+  <g filter="url(#shadow)">
+    <path d="M 230 150 
+             A 45 45 0 0 1 270 90 
+             A 60 60 0 0 1 360 85 
+             A 50 50 0 0 1 400 135 
+             A 40 40 0 0 1 385 180 
+             L 225 180 
+             A 35 35 0 0 1 230 150 Z" 
+          fill="url(#cloudGrad)" />
+  </g>
+
+  <!-- Cloud Inner Icons / Text -->
+  <text x="305" y="145" font-family="'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">CLOUD</text>
+  <circle cx="265" cy="120" r="3" fill="#ffffff" opacity="0.8" />
+  <circle cx="345" cy="115" r="4" fill="#ffffff" opacity="0.8" />
+
+  <!-- Node 1: Laptop / Client Device -->
+  <g transform="translate(70, 230)" filter="url(#shadow)">
+    <rect width="100" height="70" rx="10" fill="url(#cardGrad)" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="20" y="12" width="60" height="38" rx="4" fill="#1e293b"/>
+    <rect x="25" y="17" width="50" height="28" rx="2" fill="#38bdf8"/>
+    <rect x="15" y="54" width="70" height="6" rx="3" fill="#94a3b8"/>
+    <text x="50" y="85" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#475569" text-anchor="middle">Clients</text>
+  </g>
+
+  <!-- Node 2: Database Storage -->
+  <g transform="translate(250, 230)" filter="url(#shadow)">
+    <rect width="100" height="70" rx="10" fill="url(#cardGrad)" stroke="#cbd5e1" stroke-width="2"/>
+    <!-- Database Cylinders -->
+    <ellipse cx="50" cy="20" rx="30" ry="8" fill="#3b82f6"/>
+    <path d="M 20 20 v 15 a 30 8 0 0 0 60 0 v -15 Z" fill="#2563eb" opacity="0.9"/>
+    <path d="M 20 35 v 15 a 30 8 0 0 0 60 0 v -15 Z" fill="#1d4ed8"/>
+    <text x="50" y="85" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#475569" text-anchor="middle">Storage</text>
+  </g>
+
+  <!-- Node 3: Server Rack / Compute -->
+  <g transform="translate(430, 230)" filter="url(#shadow)">
+    <rect width="100" height="70" rx="10" fill="url(#cardGrad)" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="20" y="15" width="60" height="12" rx="3" fill="#0f172a"/>
+    <circle cx="28" cy="21" r="2" fill="#22c55e"/>
+    <rect x="20" y="32" width="60" height="12" rx="3" fill="#0f172a"/>
+    <circle cx="28" cy="38" r="2" fill="#22c55e"/>
+    <text x="50" y="85" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#475569" text-anchor="middle">Servers</text>
+  </g>
+</svg>
